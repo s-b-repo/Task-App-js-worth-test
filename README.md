@@ -30,4 +30,23 @@ If you'd like to contribute to the development of this project, please feel free
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Enjoy using the To-Do List App! If you have any questions or encounter issues, please don't hesitate to [contact us](mailto:your-email@example.com).
+## Running locally
+
+No build step — it's plain HTML/CSS/JS. Either:
+
+- open `index.html` in a browser directly, or
+- serve the folder: `python3 -m http.server` then visit `http://localhost:8000`.
+
+## Notes
+
+- Tasks are stored in `localStorage` under the key `todo-list` as a JSON
+  array of `{text, checked}`. Older versions of this app persisted raw
+  `innerHTML`, which meant any HTML in a task label would be re-executed
+  on reload (stored-XSS). If you're upgrading and see a stale entry from
+  that older format, clear `localStorage` once.
+- The font-family is `Poppins`; if the Google Fonts stylesheet isn't
+  available it falls back to `sans-serif`.
+
+## Issues
+
+Please file bugs at [github.com/s-b-repo/Task-App-js-worth-test/issues](https://github.com/s-b-repo/Task-App-js-worth-test/issues).
